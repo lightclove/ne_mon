@@ -1,6 +1,6 @@
 -- Created 02-12s-2021
 -- Представление предназачено для отображения значений соседей сетевых элементаов, полученных с помощью LLDP
--- а также для отображения топологии в клиенте Musson (Вкладка Topology)
+-- а также для отображения топологии в клиенте 
 CREATE VIEW osi.ui_nbrs AS
 ----------------------------------------------------------------------------------------------------------------------
 SELECT
@@ -103,8 +103,8 @@ GROUP BY osi.ui_nbrs.ip,net.ne.name, net.ne.id ;
 ------------------------------------------------------------------------------------------------------------------------
 --AND     osi.snmp_message.ne_id = net.tmp_new.id
 --select min(dt) from osi.snmp_message
---select log::json->'0'->>'fl' from musson.osi.snmp_message
---select log::json->'0' from musson.osi.snmp_message text
+--select log::json->'0'->>'fl' from .osi.snmp_message
+--select log::json->'0' from .osi.snmp_message text
 --select snmp_value_active.oid, task.proc from osi.snmp_value_active, net.task.id where osi.snmp_value_active.message_id = net.task.id
 
 
